@@ -1,0 +1,19 @@
+﻿
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Device Id</th>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Data</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Machine machine in machines)
+        {
+            <MachineEntry data="machine"></MachineEntry>
+        }
+    </tbody>
+</table>

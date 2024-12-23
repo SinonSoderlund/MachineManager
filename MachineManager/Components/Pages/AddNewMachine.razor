@@ -1,0 +1,23 @@
+﻿@page "/addNewMachine"
+@rendermode InteractiveServer
+
+<h3>Add New Machine</h3>
+
+<EditForm Enhance Model="machine" FormName="AddNewMachine" OnValidSubmit="addNewMachine">
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+    <div class="row mb-3">
+        <label for="Name" class="col-form-label col-sm-3">Name:</label>
+        <div class="col-sm-8">
+            <InputText id="Name" class="form-control col-sm-8" @bind-value="@machine.Name" placeholder="Enter Name"></InputText>
+        </div>
+        <ValidationMessage class="offset-sm-3 col-sm-8" For="(()=>machine.Name)"></ValidationMessage>
+    </div>
+    <div class="row mb-3">
+        <label for="Data" class="col-form-label col-sm-3">Data:</label>
+        <div class="col-sm-8">
+            <InputTextArea id="Data" class="form-control col-sm-8" @bind-value="@machine.Data" placeholder="Enter Data"></InputTextArea>
+        </div>
+        <ValidationMessage class="offset-sm-3 col-sm-8" For="(()=>machine.Data)"></ValidationMessage>
+    </div>
+    <button class="btn btn-primary" type="submit">Add Device</button>
+</EditForm>
